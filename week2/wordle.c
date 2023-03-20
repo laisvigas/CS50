@@ -1,3 +1,5 @@
+// WORDLE50: https://cs50.harvard.edu/x/2023/psets/2/wordle50/
+
 #include <cs50.h>
 #include <stdlib.h>
 #include <stdio.h>

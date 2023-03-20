@@ -1,3 +1,5 @@
+// READABILITY: https://cs50.harvard.edu/x/2023/psets/2/readability/
+
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>

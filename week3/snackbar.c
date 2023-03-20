@@ -1,3 +1,5 @@
+// SNACKBAR: https://cs50.harvard.edu/x/2023/problems/3/snackbar/
+
 // Practice using structs
 // Practice writing a linear search function
 

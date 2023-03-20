@@ -1,3 +1,5 @@
+// AVERAGE HIGH TEMPERATURES: https://cs50.harvard.edu/x/2023/problems/3/temps/
+
 // Practice working with structs
 // Practice applying sorting algorithms
 
