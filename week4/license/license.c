@@ -27,12 +27,13 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        plates[idx] = buffer;
-        idx++;
+        plates[idx] = malloc(sizeof(buffer));
+        strcpy(plates[idx++], buffer);
     }
 
     for (int i = 0; i < 8; i++)
     {
         printf("%s\n", plates[i]);
+        free(plates[i]);
     }
 }
