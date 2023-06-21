@@ -1,3 +1,5 @@
+# BIRTHDAYS: https://cs50.harvard.edu/x/2023/labs/9/
+
 import os
 
 from cs50 import SQL
@@ -25,15 +27,26 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-
+        name = request.form.get("name")
+        month = request.form.get("month")
+        day = request.form.get("day")
         # TODO: Add the user's entry into the database
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES (:name, :month, :day);", name=name, month=month, day=day)
 
+        # Redirect to a different route after successful form submission
+        return redirect("/")
+    
+    elif request.method == "GET" and request.args.get("delete"):
+        entry_id = request.args.get("delete")
+
+        # Delete the selected entry from the database
+        db.execute("DELETE FROM birthdays WHERE id = :entry_id;", entry_id=entry_id)
+
+        # Redirect to the root URL after deleting the entry
         return redirect("/")
 
-    else:
-
-        # TODO: Display the entries in the database on index.html
-
-        return render_template("index.html")
+    # TODO: Display the entries in the database on index.html
+    rows = db.execute("SELECT * FROM birthdays;")
+    return render_template("index.html", birthdays=rows)
 
 
