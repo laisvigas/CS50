@@ -1,4 +1,3 @@
-# CS50x
- CS50's Introduction to Computer Science
+# CS50
 
-WEEK 8 - HTML, CSS and Javascript Project: https://laisvigas.github.io/CS50x/week8/problem-set-8/index.html
+ 1 - CS50's Introduction to Computer Science
