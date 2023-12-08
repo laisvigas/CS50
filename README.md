@@ -14,6 +14,6 @@ Welcome to the CS50 Solutions Repository! This repository hosts solutions to exe
 - **CS50 Introduction to Cybersecurity:** Uncover comprehensive answers to assignments, guiding you through the intricacies of cybersecurity concepts. Approach the solutions independently before reviewing for an enhanced learning experience.
 
 ## How to Use:
-Feel free to navigate through the folders corresponding to each course to find exercises categorized by weeks and the name of the exercise inside the weeks folders. Each solution is designed to provide insights and enhance your learning experience. Whether you're a student in the midst of coursework or a self-learner seeking knowledge, these solutions are here to support your journey into the world of computer science and databases.
+Feel free to navigate through the folders corresponding to each course to find exercises categorized by weeks and the name of the exercise inside the weeks folders. Each solution is designed to provide insights and enhance your learning experience. Whether you're a student in the midst of coursework or a self-learner seeking knowledge, these solutions are here to support your journey into the world of programming.
 
 **Happy coding!** 🚀
