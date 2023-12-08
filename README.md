@@ -6,7 +6,7 @@
 - **CS50 Introduction to Cybersecurity**
 
 ## Description:
-Welcome to the CS50 Solutions Repository! This repository hosts solutions to exercises from the CS50 courses. Currently, solutions for the exercises from **CS50 Introduction to Computer Science** and some from **CS50 Introduction to Databases with SQL** are available. As I progress and take more courses from CS50, I will continue to add solutions here.
+Welcome to the CS50 Solutions Repository! This repository hosts solutions to exercises from the CS50 courses. Currently, solutions for the exercises from **CS50 Introduction to Computer Science** and some from **CS50 Introduction to Databases with SQL** and **CS50 Introduction to Cybersecurity** are available. As I progress and take more courses from CS50, I will continue to add solutions here.
 
 ## What's Inside:
 - **CS50 Introduction to Computer Science Solutions:** Explore clear, step-by-step solutions to programming exercises, aiding your understanding of algorithms, data structures, and more.
