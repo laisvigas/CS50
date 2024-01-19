@@ -22,6 +22,7 @@ function PlayState:init()
     self.pipePairs = {}
     self.timer = 0
     self.score = 0
+    self.paused = false
 
     -- initialize our last recorded Y value for a gap placement to base other gaps off of
     self.lastY = -PIPE_HEIGHT + math.random(80) + 20
@@ -110,6 +111,13 @@ function PlayState:render()
     love.graphics.print('Score: ' .. tostring(self.score), 8, 8)
 
     self.bird:render()
+    
+    if gPausingGame then
+        love.graphics.setFont(mediumFont)
+        local message = "Paused"
+        local messageWidth = mediumFont:getWidth(message)
+        love.graphics.print(message, math.floor((VIRTUAL_WIDTH - messageWidth) / 2), VIRTUAL_HEIGHT / 2 - mediumFont:getHeight() / 2)
+    end
 end
 
 --[[

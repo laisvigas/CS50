@@ -62,7 +62,10 @@ local GROUND_SCROLL_SPEED = 60
 
 local BACKGROUND_LOOPING_POINT = 413
 
+gPausingGame = false
+
 function love.load()
+
     -- initialize our nearest-neighbor filter
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
@@ -127,8 +130,14 @@ function love.keypressed(key)
 
     if key == 'escape' then
         love.event.quit()
+
+    elseif key == 'p' then
+        gPausingGame = not gPausingGame
+        print("Pausing game:", gPausingGame)
     end
 end
+
+
 
 --[[
     LÖVE2D callback fired each time a mouse button is pressed; gives us the
@@ -158,10 +167,20 @@ function love.update(dt)
     backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
     groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) % VIRTUAL_WIDTH
 
-    gStateMachine:update(dt)
+    if not gPausingGame then
+        gStateMachine:update(dt)
+    end
 
-    love.keyboard.keysPressed = {}
-    love.mouse.buttonsPressed = {}
+    -- Check for pause key ('p') and toggle the pause state
+    if love.keyboard.wasPressed('p') then
+        gPausingGame = gPausingGame
+    end
+
+    -- Reset keysPressed when not paused
+    if not gPausingGame then
+        love.keyboard.keysPressed = {}
+        love.mouse.buttonsPressed = {}
+    end
 end
 
 function love.draw()
