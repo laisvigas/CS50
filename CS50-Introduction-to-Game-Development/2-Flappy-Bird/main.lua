@@ -130,8 +130,9 @@ function love.keypressed(key)
 
     if key == 'escape' then
         love.event.quit()
+    end
 
-    elseif key == 'p' then
+    if key == 'p' then
         gPausingGame = not gPausingGame
         print("Pausing game:", gPausingGame)
     end
@@ -162,22 +163,15 @@ function love.mouse.wasPressed(button)
     return love.mouse.buttonsPressed[button]
 end
 
+-- se não está em estado de false 
 function love.update(dt)
-    -- scroll our background and ground, looping back to 0 after a certain amount
-    backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
-    groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) % VIRTUAL_WIDTH
-
     if not gPausingGame then
+        -- scroll our background and ground, looping back to 0 after a certain amount
+        backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
+        groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) % VIRTUAL_WIDTH
         gStateMachine:update(dt)
-    end
 
-    -- Check for pause key ('p') and toggle the pause state
-    if love.keyboard.wasPressed('p') then
-        gPausingGame = gPausingGame
-    end
-
-    -- Reset keysPressed when not paused
-    if not gPausingGame then
+        -- Reset keysPressed when not paused
         love.keyboard.keysPressed = {}
         love.mouse.buttonsPressed = {}
     end
