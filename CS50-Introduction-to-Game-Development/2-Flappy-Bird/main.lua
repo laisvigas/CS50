@@ -163,7 +163,6 @@ function love.mouse.wasPressed(button)
     return love.mouse.buttonsPressed[button]
 end
 
--- se não está em estado de false 
 function love.update(dt)
     if not gPausingGame then
         -- scroll our background and ground, looping back to 0 after a certain amount
