@@ -30,16 +30,18 @@ function PlayState:init()
 end
 
 
-
 function PlayState:update(dt)
 
     -- Check for pause/unpause key
     if love.keyboard.keysPressed['p'] then
         self.pause = not self.pause
         sounds['pause']:play()
+        sounds['music']:pause()
+        love.graphics.printf('Game Paused', 0, 130, VIRTUAL_WIDTH, 'center')
     end
 
     if not self.pause then 
+        sounds['music']:play()
         -- update timer for pipe spawning
         self.timer = self.timer + dt
 

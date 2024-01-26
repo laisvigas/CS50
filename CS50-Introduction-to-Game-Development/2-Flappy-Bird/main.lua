@@ -173,4 +173,21 @@ function love.draw()
     love.graphics.draw(ground, -groundScroll, VIRTUAL_HEIGHT - 16)
 
     push:finish()
+
+    if gStateMachine.current.pause then
+        local screenWidth = love.graphics.getWidth()
+        local screenHeight = love.graphics.getHeight()
+    
+        local message = "Game Paused"
+        
+        -- Calculate the position to center the text
+        local textWidth = love.graphics.getFont():getWidth(message)
+        local textHeight = love.graphics.getFont():getHeight()
+    
+        local x = (screenWidth - textWidth) / 2
+        local y = (screenHeight - textHeight) / 2
+    
+        -- Draw the message at the center of the screen
+        love.graphics.print(message, x, y)
+    end    
 end
