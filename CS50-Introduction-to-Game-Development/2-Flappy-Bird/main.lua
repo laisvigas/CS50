@@ -62,10 +62,7 @@ local GROUND_SCROLL_SPEED = 60
 
 local BACKGROUND_LOOPING_POINT = 413
 
-gPausingGame = false
-
 function love.load()
-
     -- initialize our nearest-neighbor filter
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
@@ -88,6 +85,7 @@ function love.load()
         ['explosion'] = love.audio.newSource('explosion.wav', 'static'),
         ['hurt'] = love.audio.newSource('hurt.wav', 'static'),
         ['score'] = love.audio.newSource('score.wav', 'static'),
+        ['pause'] = love.audio.newSource('pause.wav', 'static'),
 
         -- https://freesound.org/people/xsgianni/sounds/388079/
         ['music'] = love.audio.newSource('marios_way.mp3', 'static')
@@ -131,14 +129,7 @@ function love.keypressed(key)
     if key == 'escape' then
         love.event.quit()
     end
-
-    if key == 'p' then
-        gPausingGame = not gPausingGame
-        print("Pausing game:", gPausingGame)
-    end
 end
-
-
 
 --[[
     LÖVE2D callback fired each time a mouse button is pressed; gives us the
@@ -164,16 +155,14 @@ function love.mouse.wasPressed(button)
 end
 
 function love.update(dt)
-    if not gPausingGame then
-        -- scroll our background and ground, looping back to 0 after a certain amount
-        backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
-        groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) % VIRTUAL_WIDTH
-        gStateMachine:update(dt)
+    -- scroll our background and ground, looping back to 0 after a certain amount
+    backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
+    groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) % VIRTUAL_WIDTH
 
-        -- Reset keysPressed when not paused
-        love.keyboard.keysPressed = {}
-        love.mouse.buttonsPressed = {}
-    end
+    gStateMachine:update(dt)
+
+    love.keyboard.keysPressed = {}
+    love.mouse.buttonsPressed = {}
 end
 
 function love.draw()
