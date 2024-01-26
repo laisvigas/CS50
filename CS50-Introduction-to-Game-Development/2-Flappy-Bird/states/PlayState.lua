@@ -37,7 +37,6 @@ function PlayState:update(dt)
         self.pause = not self.pause
         sounds['pause']:play()
         sounds['music']:pause()
-        love.graphics.printf('Game Paused', 0, 130, VIRTUAL_WIDTH, 'center')
     end
 
     if not self.pause then 
