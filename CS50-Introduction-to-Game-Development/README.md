@@ -28,7 +28,16 @@ Assignment grade: 1/1
 
 link: https://cs50.harvard.edu/games/2018/projects/1/flappy/
 
+### Timestamps:
+
+Difference in horizontal and vertical gap between pipes [0:00 - 0:18]
+
+Trophies [0:18 - 1:27]
+
+Pausing the game [1:27 - 1:46]
+
 https://github.com/laisvigas/CS50/assets/119849251/1dc0d1c9-73ad-4107-91b2-614c8bccf225
 
+The main changes in this Flappy Bird code can be found in main.lua, PipePair.lua, PlayState.lua and ScoreState.lua 
 
-
+Assignment grade: In progress
