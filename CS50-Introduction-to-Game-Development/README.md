@@ -38,6 +38,6 @@ Pausing the game [1:27 - 1:46]
 
 https://github.com/laisvigas/CS50/assets/119849251/1dc0d1c9-73ad-4107-91b2-614c8bccf225
 
-The main changes in this Flappy Bird code can be found in main.lua, PipePair.lua, PlayState.lua and ScoreState.lua 
+The main changes in this Flappy Bird code can be found in **main.lua**, **PipePair.lua**, **PlayState.lua** and **ScoreState.lua** 
 
 Assignment grade: In progress
