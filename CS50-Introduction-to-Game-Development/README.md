@@ -28,6 +28,7 @@ Assignment grade: 1/1
 
 link: https://cs50.harvard.edu/games/2018/projects/1/flappy/
 
+https://github.com/laisvigas/CS50/assets/119849251/1dc0d1c9-73ad-4107-91b2-614c8bccf225
 
 
 
