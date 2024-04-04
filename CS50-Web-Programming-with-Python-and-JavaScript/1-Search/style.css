@@ -52,3 +52,9 @@ input[type="submit"] {
   border-radius: 20px;
   padding: 10px 30px;
 }
+
+img {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
