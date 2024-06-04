@@ -35,3 +35,31 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+
+def markdown_to_html(markdown):
+    # Convert headings
+    markdown = re.sub(r'^(#{1,6})\s*(.*)', lambda m: f'<h{len(m.group(1))}>{m.group(2)}</h{len(m.group(1))}>', markdown, flags=re.MULTILINE)
+    
+    # Convert bold text
+    markdown = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', markdown)
+
+    # Convert unordered lists
+    markdown = re.sub(r'^\*\s*(.*)', r'<ul>\n<li>\1</li>\n</ul>', markdown, flags=re.MULTILINE)
+
+    # Convert links
+    markdown = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', markdown)
+
+    # Convert paragraphs (any text not wrapped in tags will be in a paragraph)
+    def wrap_paragraphs(text):
+        paragraphs = text.split('\n\n')
+        wrapped_paragraphs = []
+        for paragraph in paragraphs:
+            if not paragraph.strip().startswith('<'):
+                wrapped_paragraphs.append(f'<p>{paragraph.strip()}</p>')
+            else:
+                wrapped_paragraphs.append(paragraph)
+        return '\n\n'.join(wrapped_paragraphs)
+
+    markdown = wrap_paragraphs(markdown)
+    return markdown

@@ -1,0 +1,1 @@
+Java is an object-oriented programming language developed in the 90's by a team of programmers led by James Gosling, at the company Sun Microsystems, which in 2008 was acquired by the company Oracle Corporation.
