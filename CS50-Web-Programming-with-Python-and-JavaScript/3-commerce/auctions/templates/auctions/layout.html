@@ -8,12 +8,12 @@
         <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
     </head>
     <body>
-        <h1>Auctions</h1>
-        <div>
+        <h1 class="mx-3">Auctions</h1>
+        <div class="mx-3 row">
             {% if user.is_authenticated %}
-                Signed in as <strong>{{ user.username }}</strong>.
+                <p>Signed in as <strong class="text-success">{{ user.username }}</strong></p>
             {% else %}
-                Not signed in.
+                <p>Not signed in.</p>
             {% endif %}
         </div>
         <ul class="nav">
@@ -21,6 +21,12 @@
                 <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
             </li>
             {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create' %}">Create Listing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'displayWatchlist' %}">Watchlist / Bids</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
                 </li>
