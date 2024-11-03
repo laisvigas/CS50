@@ -28,4 +28,4 @@
 
 Assignment: https://cs50.harvard.edu/web/2020/projects/0/search/
 
-Completed Assignment: https://laisvigas.github.io/CS50/CS50-Web-Programming-with-Python-and-JavaScript/search/index.html
+Completed Assignment: https://laisvigas.github.io/CS50/CS50-Web-Programming-with-Python-and-JavaScript/1-search/index.html
